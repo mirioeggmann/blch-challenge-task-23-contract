@@ -1,2 +1,2 @@
-# Contract repo
-- checkout the main-repo: https://github.com/mirioeggmann/blch-challenge-task-23
+# Contract only repo
+- checkout the main-repo for further information: https://github.com/mirioeggmann/blch-challenge-task-23
