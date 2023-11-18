@@ -1,17 +1,9 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.22;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "@unlock-protocol/contracts/dist/PublicLock/IPublicLockV13.sol";
 
-contract EventTicket is ERC721, ERC721Burnable, Ownable {
-    constructor(address initialOwner)
-        ERC721("EventTicket", "ETT")
-        Ownable(initialOwner)
-    {}
-
-    function safeMint(address to, uint256 tokenId) public onlyOwner {
-        _safeMint(to, tokenId);
+contract EventTicket {
+    constructor() {
     }
 }
