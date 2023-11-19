@@ -1,11 +1,11 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const eventTicket = await ethers.deployContract("EventTicket");
+  const etherTickets = await ethers.deployContract("EtherTickets");
 
-  await eventTicket.waitForDeployment();
+  await etherTickets.waitForDeployment();
 
-  console.log(`EventTicket deployed to: ${eventTicket.target}`);
+  console.log(`EtherTickets deployed to: ${etherTickets.target}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
