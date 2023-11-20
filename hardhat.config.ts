@@ -1,5 +1,4 @@
 import 'dotenv/config';
-import '@unlock-protocol/hardhat-plugin'
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 
