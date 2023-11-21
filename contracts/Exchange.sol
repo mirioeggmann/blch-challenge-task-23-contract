@@ -54,4 +54,14 @@ contract NFTExchange is Ownable {
 
         emit ListingSold(listingId, msg.sender);
     }
+
+     function getAllListings() public view returns (Listing[] memory) {
+        Listing[] memory allListings = new Listing[](_listingIds);
+
+        for (uint256 i = 0; i < _listingIds; i++) {
+            allListings[i] = listings[i];
+        }
+        return allListings;
+    }
+
 }
