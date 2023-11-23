@@ -6,7 +6,7 @@ const INFURA_API_KEY = process.env.INFURA_API_KEY || 'aaaaaaaaaaaaaaaaaaaaaaaaaa
 const SEPOLIA_PRIVATE_KEY = process.env.SEPOLIA_PRIVATE_KEY || 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.22",
+  solidity: "0.8.23",
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {},
