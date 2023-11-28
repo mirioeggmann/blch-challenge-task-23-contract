@@ -8,22 +8,38 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  
 contract EtherTickets is ERC721, ERC721Burnable, ERC721Enumerable, Ownable {
     
-    uint256 private constant maxSupply = 1000;
+    uint256 private _maxSupply = 1000;
+    mapping(uint256 => bool) public tokenIsUsed;
 
-    
-    constructor(address initialOwner)
-        ERC721("EtherTickets", "ETT")
+    event tokenWasUsed(address indexed from, uint256 tokenId);
+
+    constructor(address initialOwner, uint256 maxSupply, string memory eventName, string memory eventShortName)
+        ERC721(eventName, eventShortName)
         Ownable(initialOwner)
-    {}
+    {
+       _maxSupply = maxSupply;
+    }
  
-     function mint(uint256 numberOfTokens) public onlyOwner {
-        require(totalSupply() < maxSupply);
+
+    function mint(uint256 numberOfTokens) public onlyOwner {
+        require(totalSupply() < _maxSupply);
         for (uint256 i = 0; i < numberOfTokens; i++) {
             _safeMint(msg.sender, totalSupply() + 1);
+            tokenIsUsed[totalSupply()] = false;
         }
     }
 
-     function _increaseBalance(address account, uint128 value)
+    
+    function useToken(uint256 tokenId) public returns (bool)
+    {
+        burn(tokenId);
+        tokenIsUsed[tokenId] = true;
+        emit tokenWasUsed(msg.sender, tokenId);
+        return true;
+    }
+
+
+    function _increaseBalance(address account, uint128 value)
         internal
         override(ERC721, ERC721Enumerable)
     {
