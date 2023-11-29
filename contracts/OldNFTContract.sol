@@ -12,7 +12,7 @@ contract EtherTickets is ERC721, ERC721Burnable, ERC721Enumerable, Ownable {
 
     
     constructor(address initialOwner)
-        ERC721("DieNeueTickets", "DNT")
+        ERC721("Legooo", "LGG")
         Ownable(initialOwner)
     {}
  
