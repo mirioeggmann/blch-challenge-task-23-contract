@@ -90,9 +90,8 @@ contract NFTExchange is Ownable {
         Listing[] memory allListings = new Listing[](_listingIds);
 
         for (uint256 i = 0; i < _listingIds; i++) {
-            allListings[i] = listings[i];
+            allListings[i] = listings[i + 1];
         }
         return allListings;
     }
-
 }
