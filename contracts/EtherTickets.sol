@@ -18,7 +18,7 @@ contract EtherTickets is ERC721, ERC721Burnable, ERC721Enumerable, Ownable {
         Ownable(initialOwner)
     {
        _maxSupply = maxSupply;
-       mint(maxSupply);
+       mint(maxSupply, initialOwner);
        setApprovalForAll(exchange, true);
     }
 
