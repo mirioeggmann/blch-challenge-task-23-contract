@@ -25,7 +25,7 @@ contract EtherTickets is ERC721, ERC721Burnable, ERC721Enumerable, Ownable {
     function mint(uint256 numberOfTokens) public onlyOwner {
         require(totalSupply() < _maxSupply);
         for (uint256 i = 0; i < numberOfTokens; i++) {
-            _safeMint(msg.sender, totalSupply() + 1);
+            _safeMint(msg.sender, totalSupply());
             tokenIsUsed[totalSupply()] = false;
         }
     }
