@@ -13,11 +13,13 @@ contract EtherTickets is ERC721, ERC721Burnable, ERC721Enumerable, Ownable {
 
     event tokenWasUsed(address indexed from, uint256 tokenId);
 
-    constructor(address initialOwner, uint256 maxSupply, string memory eventName, string memory eventShortName)
+    constructor(address initialOwner, uint256 maxSupply, string memory eventName, string memory eventShortName, address exchange)
         ERC721(eventName, eventShortName)
         Ownable(initialOwner)
     {
        _maxSupply = maxSupply;
+       mint(maxSupply);
+       setApprovalForAll(exchange, true);
     }
 
     function mint(uint256 numberOfTokens, address initMint) public onlyOwner {
