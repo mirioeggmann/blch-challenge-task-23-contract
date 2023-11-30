@@ -3,7 +3,6 @@ pragma solidity ^0.8.23;
 
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "contracts/EtherTickets.sol";
 
 contract NFTExchange is Ownable {
     uint256 public _listingIds;
@@ -43,32 +42,8 @@ contract NFTExchange is Ownable {
         emit ListingCreated(_listingIds, nftContract, tokenId, msg.sender, price);
     }
 
-
-    function deployNewEvent(uint256 maxSupply, string memory eventName, string memory eventShortName) public  {
-        EtherTickets newContract = new EtherTickets(address(this), maxSupply, eventName, eventShortName); // wird in context exchange ausgeführt
-        
-
-        //1. 0 mann kann die tickets auch auf die Exchange minten, dann hat mann aber Probleme mit der Bezahlung falls verkauft wird. 
-        // weiter lässt sich nicht listen da vermutlich schon owner von token ist.
-        // newContract.approve(address(this), 1);
-        //createMultipleListing(address(newContract), initalPrice, 1, maxSupply)
-
-
-        //2.0 var zwei den mint an den eigenen NFT smartcontract
-        //keine probleme mit bezahlung 
-        //jedoch probleme zu approven (smart contract müsste sich selber approven können, wird jedoch immer aus context aufrufer gemacht == keine rechte)
-
-        // 3.0 Funktioniert aber halt nicht ganz so schön. 
-        // deployNewEvent aufrufen (aus eventersteller wallet (backend)) 
-        newContract.mint(maxSupply, msg.sender); // alternativ auch gerade direct separater call von eventhersteller wallet (backend)
-        // call von backend um alle Tokens zu approven --> setApprovalForAll
-        // call von backend um alle tokens zu listen  --> createMultipleListing
-    }
-
-
-
     function createMultipleListing(address nftContract, uint256 price, uint256 startTokenId, uint256 endTokenId) public {
-        for (uint256 tokenId = startTokenId; tokenId < endTokenId; tokenId++) {
+        for (uint256 tokenId = startTokenId; tokenId <= endTokenId; tokenId++) {
                 createListing(nftContract, tokenId, price);
             }
         }
