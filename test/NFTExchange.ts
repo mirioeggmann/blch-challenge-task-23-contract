@@ -20,7 +20,7 @@ describe("NFTExchange", function () {
         );
         
         return {nftExchange, etherTickets, nftOwner};
-    };
+    }
 
   describe("Deployment", function () {
     it("Should deploy the contract with the correct owner", async function () {
@@ -67,7 +67,6 @@ describe("NFTExchange", function () {
       const listingPrice = 1337;
 
       const etherTicketsAddress = await etherTickets.getAddress();
-      const nftOwnerAddress = await nftOwner.getAddress();
 
       await nftExchange.connect(nftOwner).createMultipleListing(
         etherTicketsAddress, 
