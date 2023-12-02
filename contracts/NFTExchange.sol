@@ -44,9 +44,9 @@ contract NFTExchange is Ownable {
 
     function createMultipleListing(address nftContract, uint256 price, uint256 startTokenId, uint256 endTokenId) public {
         for (uint256 tokenId = startTokenId; tokenId <= endTokenId; tokenId++) {
-                createListing(nftContract, tokenId, price);
-            }
+            createListing(nftContract, tokenId, price);
         }
+    }
 
     function buyNFT(uint256 listingId) public payable {
         Listing storage listing = listings[listingId];
