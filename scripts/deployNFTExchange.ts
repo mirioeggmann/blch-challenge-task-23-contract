@@ -1,11 +1,11 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const etherTickets = await ethers.deployContract("EtherTickets", ["0xbcD774708B59EF40383fF9996bf049b58E881eEF"]);
+  const nftExchange = await ethers.deployContract("NFTExchange");
 
-  await etherTickets.waitForDeployment();
+  await nftExchange.waitForDeployment();
 
-  console.log(`EtherTickets deployed to: ${etherTickets.target}`);
+  console.log(`NFTExchange deployed to: ${nftExchange.target}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
