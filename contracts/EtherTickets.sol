@@ -6,6 +6,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
  
+/// @custom:security-contact mirio.eggmann@ost.ch, dario.glasl@ost.ch, samuel.maissen@ost.ch
 contract EtherTickets is ERC721, ERC721Burnable, ERC721Enumerable, Ownable {
     
     uint256 private _maxSupply;

@@ -4,6 +4,7 @@ pragma solidity ^0.8.23;
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+/// @custom:security-contact mirio.eggmann@ost.ch, dario.glasl@ost.ch, samuel.maissen@ost.ch
 contract NFTExchange is Ownable {
     uint256 public _listingIds;
 
