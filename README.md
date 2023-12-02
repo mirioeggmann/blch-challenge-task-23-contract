@@ -1,6 +1,6 @@
 # blch-challenge-task-23-contract
 
-## Development tooling
+## Getting started
 
 - Open this Hardhat project (optimally in VS Code with [VS Code extension](https://hardhat.org/hardhat-vscode/docs/overview)) and run `npm install`
 - Use Remix either on `https://remix.ethereum.org/` or run it locally with [docker-compose](https://github.com/ethereum/remix-project/blob/master/docker-compose.yaml)
