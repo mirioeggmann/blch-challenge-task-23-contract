@@ -15,6 +15,7 @@ npx hardhat test
 npx hardhat run scripts/deployEtherTickets.ts # default is hardhat network
 npx hardhat run scripts/deployNFTExchange.ts
 npx hardhat run scripts/deployNFTExchange.ts --network sepolia
+npx hardhat verify --network sepolia NEW_ADDRESS_FROM_DEPLOYED_CONTRACT
 ```
 
 ## Credits
