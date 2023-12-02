@@ -10,6 +10,7 @@
 ```shell
 npx hardhat test
 
-npx hardhat run scripts/deploy.ts # default hardhat network
+npx hardhat run scripts/deployEtherTickets.ts # default is hardhat network
+npx hardhat run scripts/deployNFTExchange.ts
 npx hardhat run scripts/deployNFTExchange.ts --network sepolia
 ```
