@@ -6,6 +6,6 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
     "eslint": "^8.57.0",
-    "hardhat": "^2.19.4"
+    "hardhat": "^2.20.1"
   }
 }
